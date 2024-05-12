@@ -33,10 +33,10 @@ export const ShoppingPage = () => {
                             key={product.id}
                             className='bg-dark text-white'
                             product={product}
-                            value={shoppingCart && shoppingCart[product.id] && shoppingCart[product.id]?.count || 0}
                             onChange={onProductCountChange}
+                            value={shoppingCart[product.id]?.count || 0}
                         >
-                            <ProductImage className='custom-image' />
+                            <ProductImage className='custom-image' style={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.2)' }} />
                             <ProductTitle />
                             <ProductButtons className='custom-buttons' />
                         </ProductCard>
@@ -55,14 +55,12 @@ export const ShoppingPage = () => {
                         <ProductCard
                             key={key}
                             product={product}
-                            value={product.count}
-                            onChange={(event) => onProductCountChange(event)}
-                            style={{
-                                width: '100px'
-                            }}
                             className='bg-dark text-white'
+                            style={{ width: '100px' }}
+                            value={product.count}
+                            onChange={onProductCountChange}
                         >
-                            <ProductImage className='custom-image' />
+                            <ProductImage className='custom-image' style={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.2)' }} />
                             <ProductButtons
                                 style={{
                                     display: 'flex',
