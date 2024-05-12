@@ -11,18 +11,18 @@ export interface Props {
 
 export const ProductButtons = ({ className, style }: Props) => {
 
-    const { handleAddCounter, handleMinusCounter, counter } = useContext(ProductContext)
+    const { increaseBy, counter } = useContext(ProductContext)
 
     return (
         <div
             style={style}
             className={`${styles.buttonsContainer} ${className}`}>
             <button
-                onClick={handleMinusCounter}
+                onClick={() => increaseBy(-1)}
                 className={styles.buttonMinus}>-</button>
             <div className={styles.countLabel}>{counter}</div>
             <button
-                onClick={handleAddCounter}
+                onClick={() => increaseBy(1)}
                 className={styles.buttonAdd}>+</button>
 
         </div>
