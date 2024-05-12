@@ -14,36 +14,16 @@ export const useShoppingCart = () => {
 
         setShoppingCart(oldState => {
 
-            // Con esta constante evaluamos si existe el producto para no agregarlo y sino
-            // existe se agrega
-            const productInCart: ProductInCart = oldState[product.id] || { count: 0, ...product }
-            if (Math.max(productInCart.count + count, 0) > 0) {
-                productInCart.count += count
-                return {
-                    ...oldState,
-                    [product.id]: productInCart
-                }
+            if (count === 0) {
+                const { [product.id]: toDelete, ...rest } = oldState
+                return { ...rest }
+
             }
 
-
-
-
-            const { [product.id]: toDelete, ...rest } = oldState
-            return { ...rest }
-
-
-
-
-            // if (count === 0) {
-            //     const { [product.id]: toDelete, ...rest } = oldState
-            //     return { ...rest }
-
-            // }
-
-            // return {
-            //     ...oldState,
-            //     [product.id]: { count, ...product }
-            // }
+            return {
+                ...oldState,
+                [product.id]: { count, ...product }
+            }
         })
 
     }
