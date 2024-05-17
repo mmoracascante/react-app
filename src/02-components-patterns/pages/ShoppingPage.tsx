@@ -1,7 +1,6 @@
 import { useState } from "react"
 import { ProductButtons, ProductCard, ProductImage, ProductTitle } from "../components"
 import { products } from "../data/products";
-import '../styles/custom-styles.css'
 
 
 
@@ -23,7 +22,6 @@ export const ShoppingPage = () => {
             <hr />
 
             <ProductCard
-                className='bg-dark text-white'
                 product={product}
                 initialValues={{
                     count: 4,
@@ -33,14 +31,9 @@ export const ShoppingPage = () => {
                 {
                     ({ reset, increaseBy, isMaxCountReached, count }) => (
                         <>
-                            <ProductImage className='custom-image' style={{ boxShadow: '10px 10px 10px rgba(0,0,0,0.2)' }} />
+                            <ProductImage />
                             <ProductTitle />
-                            <ProductButtons className='custom-buttons' />
-
-                            <button onClick={reset}> Reset</button>
-                            <button onClick={() => increaseBy(-2)}> -2</button>
-                            <button onClick={() => increaseBy(+2)} disabled={isMaxCountReached}> +2</button>
-                            <span>{count}</span>
+                            <ProductButtons />
 
                         </>
                     )
