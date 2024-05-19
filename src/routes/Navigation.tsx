@@ -11,6 +11,8 @@ import {
     FormikYupPage,
     FormikComponentsPage,
     FormikAbstractPage,
+    RegisterFormikPage,
+    DynamicsFormPage,
 } from '../03-forms/pages';
 
 import logo from '../logo.svg';
@@ -26,6 +28,9 @@ export const Navigation = () => {
                             <NavLink to="/register" activeClassName="nav-active" exact>Register page</NavLink>
                         </li>
                         <li>
+                            <NavLink to="/register-formik" activeClassName="nav-active" exact>Register Formik</NavLink>
+                        </li>
+                        <li>
                             <NavLink to="/formik-basic" activeClassName="nav-active" exact>Formik Basic</NavLink>
                         </li>
                         <li>
@@ -38,7 +43,7 @@ export const Navigation = () => {
                             <NavLink to="/formik-abstract" activeClassName="nav-active" exact>Formik Abstract</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/users" activeClassName="nav-active" exact>Users</NavLink>
+                            <NavLink to="/dynamic-form" activeClassName="nav-active" exact>Dynamic Form</NavLink>
                         </li>
                     </ul>
                 </nav>
@@ -49,6 +54,9 @@ export const Navigation = () => {
                     <Route path="/formik-basic">
                         <FormikPage />
                     </Route>
+                    <Route path="/register-formik">
+                        <RegisterFormikPage />
+                    </Route>
                     <Route path="/formik-yup">
                         <FormikYupPage />
                     </Route>
@@ -58,8 +66,9 @@ export const Navigation = () => {
                     <Route path="/formik-abstract">
                         <FormikAbstractPage />
                     </Route>
-                    <Route path="/users">
-                        <h1>Users</h1>
+
+                    <Route path="/dynamic-form">
+                        <DynamicsFormPage />
                     </Route>
                     <Route path="/register">
                         <RegisterPage />
